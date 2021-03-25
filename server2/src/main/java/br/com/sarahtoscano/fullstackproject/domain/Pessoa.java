@@ -1,6 +1,8 @@
 package br.com.sarahtoscano.fullstackproject.domain;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.GenerationType;
 import javax.persistence.GeneratedValue;
 
@@ -23,9 +25,14 @@ public class Pessoa {
 
     private String dataNascimento;
 
+    private Boolean isVacinada;
+
+    @ManyToOne
+    @JoinColumn(name="codigo_grupo_prioridades")
+    private GrupoPrioridades grupo;
 
     public Long getCodigo() {
-        return this.codigo;
+        return codigo;
     }
 
     public void setCodigo(Long codigo) {
@@ -33,7 +40,7 @@ public class Pessoa {
     }
 
     public String getNome() {
-        return this.nome;
+        return nome;
     }
 
     public void setNome(String nome) {
@@ -41,7 +48,7 @@ public class Pessoa {
     }
 
     public String getCpf() {
-        return this.cpf;
+        return cpf;
     }
 
     public void setCpf(String cpf) {
@@ -49,7 +56,7 @@ public class Pessoa {
     }
 
     public String getTelefone() {
-        return this.telefone;
+        return telefone;
     }
 
     public void setTelefone(String telefone) {
@@ -57,7 +64,7 @@ public class Pessoa {
     }
 
     public String getEmail() {
-        return this.email;
+        return email;
     }
 
     public void setEmail(String email) {
@@ -65,7 +72,7 @@ public class Pessoa {
     }
 
     public Integer getIdade() {
-        return this.idade;
+        return idade;
     }
 
     public void setIdade(Integer idade) {
@@ -73,11 +80,19 @@ public class Pessoa {
     }
 
     public String getDataNascimento() {
-        return this.dataNascimento;
+        return dataNascimento;
     }
 
     public void setDataNascimento(String dataNascimento) {
         this.dataNascimento = dataNascimento;
+    }
+
+    public Boolean getIsVacinada() {
+        return isVacinada;
+    }
+
+    public void setIsVacinada(Boolean isVacinada) {
+        this.isVacinada = isVacinada;
     }
 
     @Override
@@ -89,6 +104,7 @@ public class Pessoa {
         result = prime * result + ((dataNascimento == null) ? 0 : dataNascimento.hashCode());
         result = prime * result + ((email == null) ? 0 : email.hashCode());
         result = prime * result + ((idade == null) ? 0 : idade.hashCode());
+        result = prime * result + ((isVacinada == null) ? 0 : isVacinada.hashCode());
         result = prime * result + ((nome == null) ? 0 : nome.hashCode());
         result = prime * result + ((telefone == null) ? 0 : telefone.hashCode());
         return result;
@@ -128,6 +144,11 @@ public class Pessoa {
                 return false;
         } else if (!idade.equals(other.idade))
             return false;
+        if (isVacinada == null) {
+            if (other.isVacinada != null)
+                return false;
+        } else if (!isVacinada.equals(other.isVacinada))
+            return false;
         if (nome == null) {
             if (other.nome != null)
                 return false;
@@ -140,6 +161,9 @@ public class Pessoa {
             return false;
         return true;
     }
+
+    
+
 
 
 
