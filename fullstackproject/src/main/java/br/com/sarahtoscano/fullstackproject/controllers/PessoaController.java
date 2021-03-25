@@ -34,7 +34,7 @@ public class PessoaController {
 
     }
 
-    @PutMapping("{codigo}")
+    @PutMapping("/{codigo}")
     public Pessoa atualizar (@PathVariable("codigo") Long codigo, 
     @RequestBody Pessoa pessoa){
         return pessoaRepository.findById(codigo).map(
@@ -47,6 +47,14 @@ public class PessoaController {
                 record.setIdade(pessoa.getIdade());
                 return pessoaRepository.save(record);
             }).orElse(null);
+    }
+
+
+    @GetMapping ("/{codigo}")
+    public Pessoa bucarPeloCodigo (@PathVariable Long codigo){
+        return pessoaRepository
+        .findById(codigo)
+        .orElse(null);
     }
 
 
