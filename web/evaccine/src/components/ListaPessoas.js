@@ -41,7 +41,7 @@ export default class ListaPessoas extends Component{
     render(){
         return (
             <div className="container">
-                <h2>Pessoas Cadastradas</h2>
+                <h2><br/>Pessoas Cadastradas<br/></h2>
                 
                 <div className="container">
                     <Table dataSource={this.state.pessoas}>
@@ -49,7 +49,7 @@ export default class ListaPessoas extends Component{
                         <Column title="CPF" dataIndex="cpf" key="cpf"/>
                         <Column title="Telefone" dataIndex="telefone" key="telefone"/>
                         <Column title="Email" dataIndex="email" key="email"/>
-                        <Column title="Vacinada" dataIndex="isVacinada" key="isVacinada"
+                        <Column title="Recebeu a vacina?" dataIndex="isVacinada" key="isVacinada"
                                 render = {(text, record) => (<p>{String(record.isVacinada)}</p>)}/>
                         <Column title="Atualizar" key="atualizar"
                                 render = {(text, record) => (<Button onClick={()=> this.successUpdate(record)} type="primary">Alterar status</Button>)}/>
