@@ -37,15 +37,11 @@ $ git clone https://github.com/SarahToscano/evaccine
 $ cd evaccine/server2
 
 # Install dependencies
-$ yarn install
-
-# Run Migrates
-$ yarn typeorm migration:run
+$ maven install
 
 # Start server
-$ yarn start
+$ Run Java Project
 
-# running on port 3333
 ```
 
 ### Install Front-end
