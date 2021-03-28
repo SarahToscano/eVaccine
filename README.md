@@ -2,11 +2,13 @@
 
 The "eVacinne" is a registration website where people can register to receive the vaccine according to their priority conditions.
 
-## 🎨 Layout 
+## 🎨 WEB Layout 
 
 <p align="center">
   <img alt="Landing page" src="./layout/landing.png" width="600">  <br/>
 </p>
+
+## 🎨 Mobile Layout 
 
 <p align="center">
   <img alt="Landing page" src="./layout/mobile.png" width="180" height="300">  <br/>
