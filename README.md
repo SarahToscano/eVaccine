@@ -8,6 +8,10 @@ The "eVacinne" is a registration website where people can register to receive th
   <img alt="Landing page" src="./layout/landing.png" width="600">  <br/>
 </p>
 
+<p align="center">
+  <img alt="Landing page" src="./layout/mobile.png" width="600">  <br/>
+</p>
+
 <br>
 
 ## 🚀 Technologies
